@@ -1,0 +1,29 @@
+body {
+  color:rgb(22, 22, 22)
+}
+
+#hamburger {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 32px;
+  z-index: 1000;
+}
+
+#sidebar {
+  position: fixed;
+  left:-250px;
+  top:0;
+  width: 250;
+  height: 100%;
+  background: rgb(42, 42, 42);
+  color: white;
+  transition: left 0.1s ease;
+  padding-top: 60px;
+}
+
+#sidebar.open {
+  left: 0;
+
+}
+
