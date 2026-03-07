@@ -64,20 +64,17 @@ body{
 <div id="sidebar">
   <ul>
     <li data-page="home">Home</li>
-    <li data-page="about">About</li>
+    <li data-page="about">About Me</li>
     <li data-page="contact">Contact</li>
   </ul>
 </div>
 
-<div id="content">
-  <h1>Welcome</h1>
-  <p>Select a page from the menu.</p>
-</div>
+
 
 <script>
+const home = document.getElementById("home");
 const sidebar = document.getElementById("sidebar");
 const hamburger = document.getElementById("hamburger");
-const content = document.getElementById("content");
 
 hamburger.addEventListener("click", () => {
   sidebar.classList.toggle("open");
