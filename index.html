@@ -1,1 +1,106 @@
-<h1> Ted Boswell </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ted Boswell</title>
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#hamburger{
+  position:fixed;
+  top:10px;
+  left:10px;
+  font-size:26px;
+  cursor:pointer;
+  z-index:1000;
+}
+
+#sidebar{
+  position:fixed;
+  left:-250px;
+  top:0;
+  width:250px;
+  height:100%;
+  background:#222;
+  color:white;
+  transition:left 0.3s ease;
+  padding-top:60px;
+}
+
+#sidebar.open{
+  left:0;
+}
+
+#sidebar ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+#sidebar li{
+  padding:15px 20px;
+  border-bottom:1px solid #333;
+  cursor:pointer;
+}
+
+#sidebar li:hover{
+  background:#444;
+}
+
+#content{
+  margin-left:0;
+  padding:60px 30px 30px 30px;
+}
+</style>
+</head>
+<body>
+
+<div id="hamburger">☰</div>
+
+<div id="sidebar">
+  <ul>
+    <li data-page="home">Home</li>
+    <li data-page="about">About</li>
+    <li data-page="contact">Contact</li>
+  </ul>
+</div>
+
+<div id="content">
+  <h1>Welcome</h1>
+  <p>Select a page from the menu.</p>
+</div>
+
+<script>
+const sidebar = document.getElementById("sidebar");
+const hamburger = document.getElementById("hamburger");
+const content = document.getElementById("content");
+
+hamburger.addEventListener("click", () => {
+  sidebar.classList.toggle("open");
+});
+
+async function loadPage(page){
+  try{
+    const res = await fetch(page + ".html");
+    const text = await res.text();
+    content.innerHTML = text;
+  }catch(err){
+    content.innerHTML = "<h2>Page not found</h2>";
+  }
+}
+
+document.querySelectorAll("#sidebar li").forEach(item=>{
+  item.addEventListener("click", ()=>{
+    const page = item.dataset.page;
+    loadPage(page);
+    sidebar.classList.remove("open");
+  });
+});
+</script>
+
+</body>
+</html>
