@@ -11,16 +11,31 @@
 <div id="hamburger">☰</div>
 
 <div id="sidebar">
-  <ul>
-    <li data-page="home">Home</li>
-    <li data-page="about">About Me</li>
-    <li data-page="contact">Contact</li>
-  </ul>
+  <h4 class="sidebarmenuitem" id="homemenuitem">Home</h4>
+  <h4 class="sidebarmenuitem" id="aboutmenuitem">About</h4>
+  <H4 class="sidebarmenuitem" id="contactmenuitem">Contact</H4>
 </div>
 
 <div id="content"></div>
 
+<script>
+const sidebar = document.getElementById("sidebar");
+const hamburger = document.getElementById("hamburger");
+const content = document.getElementById("content");
 
+hamburger.addEventListener("click", () => {
+  if(sidebar.classList.contains("open")) {
+    sidebar.classList.remove("open");
+    hamburger.classList.remove("open");
+  } else {
+    sidebar.classList.add("open");
+    hamburger.classList.add("open");
+  }
+});
+
+
+
+</script>
 
 </body>
 </html>
