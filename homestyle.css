@@ -61,4 +61,6 @@ h4.sidebarmenuitem:hover {
   color: chartreuse;
   font-size: xx-large;
   text-align: center;
+  width:100%;
+  height:100%;
 }
