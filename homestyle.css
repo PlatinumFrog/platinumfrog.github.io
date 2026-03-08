@@ -63,4 +63,5 @@ h4.sidebarmenuitem:hover {
   text-align: center;
   width:100%;
   height:100%;
+  z-index: 500;
 }
