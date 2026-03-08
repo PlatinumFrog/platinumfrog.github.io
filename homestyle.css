@@ -39,7 +39,7 @@ body {
   color: white;
   text-align: left;
   font-size: 32px;
-  transition: left 0.1s ease;
+  transition: left 5s ease;
 }
 
 #sidebar.open {
