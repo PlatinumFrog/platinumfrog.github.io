@@ -56,3 +56,9 @@ h4.sidebarmenuitem:hover {
 
 }
 
+#content {
+  background-color: coral;
+  color: chartreuse;
+  font-size: xx-large;
+  text-align: center;
+}
