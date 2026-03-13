@@ -1,0 +1,99 @@
+body {
+  position: fixed;
+  background-color: black;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  z-index: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+  background-color: rgb(68, 68, 68);
+  color: rgb(0, 0, 0);
+  font-size: xx-large;
+  text-align: center;
+  width:100%;
+  height:100%;
+  top: 0px;
+  left: 0px;
+  padding: 0px;
+  margin: 0px;
+  z-index: 500;
+}
+
+iframe {
+  border: none;
+}
+#hamburger {
+  position: fixed;
+  border-radius: 5px;
+  background-color: rgb(35, 35, 35);
+  color: rgb(200, 200, 200);
+  font-size: 22px;
+  top: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  z-index: 1000;
+}
+
+#hamburger.open {
+  background-color: rgb(65,65,65);
+}
+
+#sidebar {
+  position: fixed;
+  display: block;
+  left:-250px;
+  top:0;
+  width: fit-content;
+  height: 100%;
+  padding-top: 52px;
+  z-index: 999;
+  background-color: rgb(22, 22, 22);
+  color: white;
+  text-align: left;
+  font-size: 32px;
+  transition: left 0.1s ease;
+}
+
+#sidebar.open {
+  left: 0px;
+}
+
+h4.sidebarmenuitem {
+  padding: 10px;
+  margin: 0px;
+}
+
+h4.sidebarmenuitem:hover {
+  background-color: rgb(45, 45, 45);
+}
+
+#home {
+  border-radius: 5px;
+  background-color: rgb(35, 35, 35);
+  color: rgb(200, 200, 200);
+  font-size: 22px;
+  top: 10px;
+  left: 52px;
+  width: 32px;
+  height: 32px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  z-index: 1000;
+}
+
+#home.open {
+  background-color: rgb(65,65,65);
+}
+
+

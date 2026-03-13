@@ -3,39 +3,55 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ted Boswell</title>>
-<link rel="stylesheet" href="homestyle.css">
+<title>Ted Boswell</title>
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
 
+<iframe id="content" src="home.html"></iframe>
+
 <div id="hamburger">☰</div>
 
+
 <div id="sidebar">
-  <h4 class="sidebarmenuitem" id="homemenuitem">Home</h4>
-  <h4 class="sidebarmenuitem" id="aboutmenuitem">About</h4>
-  <H4 class="sidebarmenuitem" id="contactmenuitem">Contact</H4>
+  <div class="sidebarmenuitem" id="home">🏠︎</div>
+  <h4 class="sidebarmenuitem" id="about">About</h4>
+  <h4 class="sidebarmenuitem" id="contact">Contact</h4>
+
 </div>
 
-<div id="content">
-<h1>Home</h1>
-</div>
+
 
 <script>
 const sidebar = document.getElementById("sidebar");
 const hamburger = document.getElementById("hamburger");
 const content = document.getElementById("content");
+const homebutton = document.getElementById("gotohome");
 
 hamburger.addEventListener("click", () => {
   if(sidebar.classList.contains("open")) {
     sidebar.classList.remove("open");
     hamburger.classList.remove("open");
+    homebutton.classList.remove("open");
   } else {
     sidebar.classList.add("open");
     hamburger.classList.add("open");
+    homebutton.classList.add("open");
   }
 });
 
 
+async function loadPage(page){
+  content.src = page + ".html";
+}
+
+document.querySelectorAll(".sidebarmenuitem").forEach(item=>{
+  item.addEventListener("click", ()=>{
+    const page = item.id;
+    loadPage(page);
+    sidebar.classList.remove("open");
+  });
+});
 
 </script>
 
