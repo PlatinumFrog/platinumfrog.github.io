@@ -55,8 +55,9 @@ iframe {
   top:0;
   width: fit-content;
   height: 100%;
-  padding-top: 52px;
-  z-index: 999;
+  padding: 10px;
+  padding-top: 10px;
+  z-index: 100;
   background-color: rgb(22, 22, 22);
   color: white;
   text-align: left;
@@ -68,16 +69,17 @@ iframe {
   left: 0px;
 }
 
-h4.sidebarmenuitem {
-  padding: 10px;
-  margin: 0px;
+#sidebar h4 {
+  border-bottom: solid 1px;
+  border-color: gray;
 }
 
-h4.sidebarmenuitem:hover {
+#sidebar h4:hover {
   background-color: rgb(45, 45, 45);
 }
 
 #home {
+  position: fixed;
   border-radius: 5px;
   background-color: rgb(35, 35, 35);
   color: rgb(200, 200, 200);
@@ -96,4 +98,17 @@ h4.sidebarmenuitem:hover {
   background-color: rgb(65,65,65);
 }
 
-
+#menu {
+  z-index: 950;
+  position: fixed;
+  user-select: none;
+  background-color: rgb(22, 22, 22);
+  border-radius: 0px;
+  border-bottom-right-radius: 10px;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 52px;
+  padding: 0px;
+  margin: 0px;
+}

@@ -10,15 +10,14 @@
 
 <iframe id="content" src="home.html"></iframe>
 
-<div id="hamburger">☰</div>
-
+<div id="menu">
+  <div id="hamburger">☰</div>
+  <div class="sidebarmenuitem" id="home">🏠︎</div>
+</div>
 
 <div id="sidebar">
-  <div class="sidebarmenuitem" id="home">🏠︎</div>
-  <h4 class="sidebarmenuitem" id="about">About</h4>
-  <h4 class="sidebarmenuitem" id="contact">Contact</h4>
-
-</div>
+  <h4 class="sidebarmenuitem" id="projects">Projects</h4>
+</h4>
 
 
 
@@ -26,7 +25,7 @@
 const sidebar = document.getElementById("sidebar");
 const hamburger = document.getElementById("hamburger");
 const content = document.getElementById("content");
-const homebutton = document.getElementById("gotohome");
+const homebutton = document.getElementById("home");
 
 hamburger.addEventListener("click", () => {
   if(sidebar.classList.contains("open")) {
@@ -42,14 +41,15 @@ hamburger.addEventListener("click", () => {
 
 
 async function loadPage(page){
-  content.src = page + ".html";
+  
 }
 
 document.querySelectorAll(".sidebarmenuitem").forEach(item=>{
   item.addEventListener("click", ()=>{
-    const page = item.id;
-    loadPage(page);
+    content.src = item.id + ".html";
     sidebar.classList.remove("open");
+    hamburger.classList.remove("open");
+    homebutton.classList.remove("open");
   });
 });
 
